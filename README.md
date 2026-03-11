@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DriveSense AI – Autonomous Perception Prototype
 
 ## Overview
@@ -29,3 +30,7 @@ graph TD;
 ## Optimization
 - CPU-optimized with `torch.no_grad()` and `model.eval()`.
 - Implements frame-skipping and resolution scaling to maintain FPS on lower-end hardware.
+=======
+# DistanceSense-vision
+Developed a lightweight autonomous perception system featuring monocular vehicle distance estimation using YOLOv8 and traffic sign recognition using MobileNetV2 transfer learning, deployed with an interactive FastAPI-based dashboard optimized for CPU environments.
+>>>>>>> f57d15f7059805aaa154019891c4bb63eb2c6955
