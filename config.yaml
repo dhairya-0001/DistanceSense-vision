@@ -1,0 +1,16 @@
+camera:
+  focal_length: 700  # Approximated depending on camera
+  real_vehicle_width_m: 1.8 # Average car width
+  confidence_threshold: 0.4
+  image_width: 640
+  image_height: 480
+
+sign_recognition:
+  num_classes: 15
+  image_size: 64
+  model_path: "models/sign_classifier.pth"
+  confidence_threshold: 0.5
+
+system:
+  frame_skip: 2
+  device: "cpu"

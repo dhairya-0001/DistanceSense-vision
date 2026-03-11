@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSense AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 class="glow-text">DriveSense <span class="accent">AI</span></h1>
+            <p class="subtitle">Autonomous Perception Prototype</p>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <aside class="control-panel">
+            <div class="panel-section">
+                <h2>Mode Selector</h2>
+                <div class="toggle-container">
+                    <button id="mode-distance" class="mode-btn active">Vehicle Distance</button>
+                    <button id="mode-sign" class="mode-btn">Traffic Sign</button>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h2>Input Source</h2>
+                <div class="input-options">
+                    <button id="source-webcam" class="input-btn active">Webcam</button>
+                    <button id="source-video" class="input-btn">Upload Video</button>
+                </div>
+                <div id="upload-container" class="upload-container hidden">
+                    <input type="file" id="video-upload" accept="video/mp4,video/x-m4v,video/*">
+                    <label for="video-upload" class="upload-label">Select Video File</label>
+                </div>
+            </div>
+
+            <div class="panel-section status-panel">
+                <h2>System Metrics</h2>
+                <div class="metric">
+                    <span>Performance</span>
+                    <span id="fps-counter" class="metric-value">0 FPS</span>
+                </div>
+                <div class="metric">
+                    <span>Hardware</span>
+                    <span class="metric-value" style="color: var(--accent-blue)">CPU Optimized</span>
+                </div>
+                <div class="metric sign-metric hidden">
+                    <span>Sign Detected</span>
+                    <span id="sign-label" class="metric-value">-</span>
+                </div>
+                <div class="metric sign-metric hidden">
+                    <span>Confidence</span>
+                    <span id="sign-conf" class="metric-value">0%</span>
+                </div>
+            </div>
+            
+            <button id="start-btn" class="action-btn">Initialize Stream</button>
+            <button id="stop-btn" class="action-btn danger hidden">Stop Stream</button>
+        </aside>
+
+        <section class="video-container">
+            <div class="video-wrapper">
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+                <div id="loading-indicator" class="loader hidden">
+                    <div class="spinner"></div>
+                    <p>Initializing Neural Net...</p>
+                </div>
+                <img id="video-feed" src="" alt="Video Stream" class="hidden">
+                <div id="idle-screen" class="idle-screen">
+                    <p>SYSTEM IDLE</p>
+                    <p class="small-text">Awaiting input source initialization...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+    <script src="/static/animations.js"></script>
+</body>
+</html>
